@@ -12,5 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout.master');
 });
+
+//Route::resource('/', '');
+
+Route::resource('/restaurants', 'RestaurantsController');
+// Route::resource('/restaurants', 'RestaurantsController')->only([
+//     'create', 'edit', 'destroy'
+// ])->middleware("auth");
+//
+//
+// Auth::routes();
+//
+Route::get('/home', 'HomeController@index')->name('home');
